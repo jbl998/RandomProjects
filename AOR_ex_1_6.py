@@ -24,3 +24,4 @@ print('Time taken to run the calculations: ', end-start)
 print('x_SH: ', x_SH.x)
 print('y_B:', y_B[1].x, y_B[2].x, y_B[3].x)
 print('y_O:', y_O[1].x, y_O[2].x, y_O[3].x)
+

@@ -23,5 +23,13 @@ print('qO: ', qO)
 print('qB: ', qB, np.mean(qB))
 print('d: ', d, np.mean(d))
 print('xSH: ', xSH.x)
-print('yB:', yB[0].x, yB[1].x, yB[2].x, yB[3].x, yB[4].x)
-print('yO:', yO[0].x, yO[1].x, yO[2].x, yO[3].x, yO[4].x)
+
+yBlist = []
+for i in range(K):
+    yBlist.append(yB[i].x)
+print('yB:', yBlist)
+
+yOlist = []
+for i in range(K):
+    yOlist.append(yO[i].x)
+print('yO:', yOlist)
