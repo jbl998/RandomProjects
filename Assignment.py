@@ -3,7 +3,7 @@ import numpy as np
 from gurobipy import GRB, Model
 print("Kristian Kofoed Mortensen (JBL998)\n"
       "Advanced Operations Research \n"
-      "Practical assignment June 8th")
+      "Practical assignment June 8th 2022")
 # Setting seed to ensure replicability
 np.random.seed(10)
 
