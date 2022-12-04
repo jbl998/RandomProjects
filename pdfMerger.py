@@ -18,5 +18,5 @@ if bl:
     print("The files has been merged. The output can be found at\n"
           +outputDir + "\\" + filename)
 else:
-        print("The files has been merged. The output can be found at\n"
-          +outputDir + "\\" + filename + ".pdf")
+    print("The files has been merged. The output can be found at\n"
+      +outputDir + "\\" + filename + ".pdf")

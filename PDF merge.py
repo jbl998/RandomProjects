@@ -2,7 +2,10 @@ import os
 from PyPDF2 import PdfFileMerger
 inputDir = "C:\\Users\\" + os.getlogin().lower() + "\\Documents\\Python\\Input\\"
 outputDir = "C:\\Users\\" + os.getlogin().lower() + "\\Documents\\Python\\Output\\"
-filename = "Coronapas KKM"
+for dir in [inputDir,outputDir]:
+    if not os.path.isdir(dir):
+        os.mkdir(dir)
+filename = "Individual Negotiation 2 Output"
 bl = filename.endswith('.pdf')
 merger = PdfFileMerger(strict=False)
 for file in os.listdir(inputDir):
