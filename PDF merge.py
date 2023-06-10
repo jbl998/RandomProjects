@@ -1,25 +1,31 @@
 import os
-from PyPDF2 import PdfFileMerger
+from PyPDF2 import PdfMerger
+
 inputDir = "C:\\Users\\" + os.getlogin().lower() + "\\Documents\\Python\\Input\\"
 outputDir = "C:\\Users\\" + os.getlogin().lower() + "\\Documents\\Python\\Output\\"
-for dir in [inputDir,outputDir]:
-    if not os.path.isdir(dir):
-        os.mkdir(dir)
-filename = "Individual Negotiation 2 Output"
-bl = filename.endswith('.pdf')
-merger = PdfFileMerger(strict=False)
-for file in os.listdir(inputDir):
-    if file.endswith('.pdf'):
-        title = file[:-4]
-        merger.append(inputDir + "\\" + file, title)
-if bl:
-    merger.write(outputDir + "\\" + filename)
-else:
-    merger.write(outputDir + "\\" + filename + ".pdf")
-merger.close()
-if bl:
-    print("The files has been merged. The output can be found at\n"
-          +outputDir + "\\" + filename)
-else:
+filename = "Samlede slides"
+
+def combinepdf(filename, input=inputDir, output=outputDir):
+    for dir in [input, output]:
+        if not os.path.isdir(dir):
+            os.mkdir(dir)
+    bl = filename.endswith('.pdf')
+    merger = PdfMerger(strict=False)
+    for file in os.listdir(input):
+        if file.endswith('.pdf'):
+            title = file[:-4]
+            merger.append(input + "\\" + file, title)
+    if bl:
+        merger.write(output + "\\" + filename)
+    else:
+        merger.write(output + "\\" + filename + ".pdf")
+    merger.close()
+    if bl:
         print("The files has been merged. The output can be found at\n"
-          +outputDir + "\\" + filename + ".pdf")
+              +output + "\\" + filename)
+    else:
+            print("The files has been merged. The output can be found at\n"
+              +output + "\\" + filename + ".pdf")
+
+
+combinepdf()
