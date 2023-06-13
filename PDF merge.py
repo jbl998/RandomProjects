@@ -3,9 +3,9 @@ from PyPDF2 import PdfMerger
 
 inputDir = "C:\\Users\\" + os.getlogin().lower() + "\\Documents\\Python\\Input\\"
 outputDir = "C:\\Users\\" + os.getlogin().lower() + "\\Documents\\Python\\Output\\"
-filename = "Samlede slides"
+filename = "Eksamensopgaver"
 
-def combinepdf(filename, input=inputDir, output=outputDir):
+def combinepdf(filename=filename, input=inputDir, output=outputDir):
     for dir in [input, output]:
         if not os.path.isdir(dir):
             os.mkdir(dir)
@@ -28,4 +28,3 @@ def combinepdf(filename, input=inputDir, output=outputDir):
               +output + "\\" + filename + ".pdf")
 
 
-combinepdf()
