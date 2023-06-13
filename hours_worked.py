@@ -7,12 +7,7 @@ import time
 
 # Adds feature for PowerBI-like interface
 # https://towardsdatascience.com/make-dataframes-interactive-in-streamlit-c3d0c4f84ccb
-from st_aggrid import (
-    GridOptionsBuilder,
-    AgGrid,
-    GridUpdateMode,
-    DataReturnMode,
-)
+# from st_aggrid import (GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode)
 
 st.set_page_config(
     page_title="Hours worked today", layout="centered", page_icon="⌛"
