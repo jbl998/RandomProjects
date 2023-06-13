@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import datetime
 import time
-from streamlit_autorefresh import st_autorefresh
+#from streamlit_autorefresh import st_autorefresh
 
 # Adds feature for PowerBI-like interface
 # https://towardsdatascience.com/make-dataframes-interactive-in-streamlit-c3d0c4f84ccb
@@ -61,7 +61,7 @@ st.text(
     "You have worked " + str(hours) + " hours today asof " + dateTimeD.strftime("%H:%M")
 )
 
-st_autorefresh(interval=60 * 1000, key="api_update")
+#st_autorefresh(interval=60 * 1000, key="api_update")
 
 # To run, enter the following in a cmd window
 # streamlit run "C:\Users\kmo\OneDrive - Better Energy\Documents\Python\hours_worked.py"
