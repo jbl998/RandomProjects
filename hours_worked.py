@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import datetime
 import time
+import pytz
 #from streamlit_autorefresh import st_autorefresh
 
 # Adds feature for PowerBI-like interface
@@ -35,7 +36,7 @@ lunchbreak_over = datetime.datetime.combine(
     seconds=((pause.hour * 60 + pause.minute) * 60 + pause.second) * Frokostpause
 )
 
-slut = st.time_input("When did/do you clock out?", datetime.datetime.now())
+slut = st.time_input("When did/do you clock out?", datetime.datetime.now(pytz.timezone('Europe/Copenhagen')))
 
 dateTimeA = datetime.datetime.combine(datetime.date.today(), start)
 dateTimeB = datetime.datetime.combine(datetime.date.today(), lunchtime)
