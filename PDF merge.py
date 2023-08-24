@@ -3,7 +3,7 @@ from PyPDF2 import PdfMerger
 
 inputDir = "C:\\Users\\" + os.getlogin().lower() + "\\Documents\\Python\\Input\\"
 outputDir = "C:\\Users\\" + os.getlogin().lower() + "\\Documents\\Python\\Output\\"
-filename = "Eksamensopgaver"
+filename = "Winos noter"
 
 def combinepdf(filename=filename, input=inputDir, output=outputDir):
     for dir in [input, output]:
