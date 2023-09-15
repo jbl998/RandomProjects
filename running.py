@@ -2,13 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import datetime
-import time
-import pytz
-# Plots
-import matplotlib.pyplot as plt
-from matplotlib.dates import DateFormatter
-from matplotlib.dates import HourLocator
-#from streamlit_autorefresh import st_autorefresh
+
 
 tab1, tab2 = st.tabs(["Pace to Race Time", "Race time to pace"])
 
