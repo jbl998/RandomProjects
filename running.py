@@ -54,7 +54,7 @@ with tab1:
     timezero = datetime.datetime(year=y, month=mo, day=d, hour=0, minute=0, second=0, microsecond=0)
     pace = datetime.datetime(year=y, month=mo, day=d, hour=hour, minute=min, second=int(sec), microsecond=mys)
     delta = datetime.timedelta(hours=hour, minutes=min, seconds=sec, microseconds=mys)
-    st.text(f"This will require you to run at pace {pace.strftime('%M:%S.%f')[:10]}")
+    st.text(f"This will require you to run at pace {pace.strftime('%M:%S.%f')[:7]}")
 
 
     st.subheader('Split times')
