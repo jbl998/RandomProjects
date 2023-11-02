@@ -46,14 +46,14 @@ with tab1:
     st.subheader("Time")
     col1, col2, col3 = st.columns(3)
     with col1:
-        h = st.number_input(label="H", min_value=0, max_value=23, value=3)
+        h = st.number_input(label="H", min_value=0, max_value=23, value=0)
     with col2:
-        m = st.number_input(label="M", min_value=0, max_value=59, value=39)
+        m = st.number_input(label="M", min_value=0, max_value=59, value=49)
     with col3:
         s = st.number_input(label="S", min_value=0, max_value=59, value=59)
     time = datetime.time(hour=h, minute=m, second=s)
     st.subheader("Pace to run")
-    d_choice_km = st.radio("Choose distance", options=dist_km, index=len(dist_km)-1)
+    d_choice_km = st.radio("Choose distance", options=dist_km, index=2)
     d_choice_m = int(d_choice_km*1000)
     hour, min, sec, mys = timetopace(hrs=h, min=m, sec=s, dist=d_choice_m)
     timezero = datetime.datetime(year=y, month=mo, day=d, hour=0, minute=0, second=0, microsecond=0)
