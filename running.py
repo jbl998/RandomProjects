@@ -31,11 +31,16 @@ dist_m = [1000, 5000, 10000, 21097.5, 42195]
 dist_km = [x/1000 for x in dist_m]
 record = [datetime.datetime(year=y, month=mo, day=d, hour=0, minute=4, second=29),  # 1000m
           datetime.datetime(year=y, month=mo, day=d, hour=0, minute=23, second=46),  # 5000m
-          datetime.datetime(year=y, month=mo, day=d, hour=0, minute=53, second=57),  # 10000m
-          datetime.datetime(year=y, month=mo, day=d, hour=6, minute=0, second=0),  # Half
-          datetime.datetime(year=y, month=mo, day=d, hour=6, minute=0, second=0)]   # Marathon
-record2 = [item.strftime("%H:%M:%S") for item in record]
+          datetime.datetime(year=y, month=mo, day=d, hour=0, minute=53, second=12),  # 10000m
+          datetime.datetime(year=y, month=mo, day=d, hour=2, minute=30, second=0),  # Half
+          datetime.datetime(year=y, month=mo, day=d, hour=7, minute=0, second=0)]   # Marathon
+record_pace = [0*i for i in range(len(record))]
+for i in range(len(dist_m)):
+    time = record[i]
+    h, m, s, mys = timetopace(hrs=time.hour, min=time.minute, sec=time.second, dist=dist_m[i])
+    record_pace[i] = datetime.time(hour=h, minute=m, second=s, microsecond=mys).strftime("%M:%S.%f")[:8]
 
+record2 = [item.strftime("%H:%M:%S") for item in record]
 
 with tab1:
     st.subheader("Time")
@@ -82,13 +87,12 @@ with tab2:
     st.subheader("Time to run")
 
     time = [pacetotime(minutes, seconds, item) for item in dist_m]
-
     data = pd.DataFrame(data={"Distance": dist_m, "Time": time, "Record": record},
                         columns=["Distance", "Time", "Record"])
 
     time2 = [item.strftime("%H:%M:%S") for item in time]
-    data2 = pd.DataFrame(data={"Distance": dist_m, "Time": time2, "Record": record2},
-                         columns=["Distance", "Time", "Record"])
+    data2 = pd.DataFrame(data={"Distance": dist_m, "Time": time2, "Record": record2, "Record pace": record_pace},
+                         columns=["Distance", "Time", "Record", "Record pace"])
 
     st.dataframe(data2)
 
