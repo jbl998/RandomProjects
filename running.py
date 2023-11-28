@@ -29,9 +29,9 @@ def timetopace(hrs, min, sec, dist):
 
 dist_m = [1000, 5000, 10000, 21097.5, 42195]
 dist_km = [x/1000 for x in dist_m]
-record = [datetime.datetime(year=y, month=mo, day=d, hour=0, minute=4, second=29),  # 1000m
-          datetime.datetime(year=y, month=mo, day=d, hour=0, minute=23, second=46),  # 5000m
-          datetime.datetime(year=y, month=mo, day=d, hour=0, minute=53, second=12),  # 10000m
+record = [datetime.datetime(year=y, month=mo, day=d, hour=0, minute=4, second=23),  # 1000m
+          datetime.datetime(year=y, month=mo, day=d, hour=0, minute=23, second=22),  # 5000m
+          datetime.datetime(year=y, month=mo, day=d, hour=0, minute=47, second=52),  # 10000m
           datetime.datetime(year=y, month=mo, day=d, hour=2, minute=30, second=0),  # Half
           datetime.datetime(year=y, month=mo, day=d, hour=7, minute=0, second=0)]   # Marathon
 record_pace = [0*i for i in range(len(record))]
