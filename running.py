@@ -83,7 +83,7 @@ with tab1:
     )
 
     st.subheader("Split times")
-    d_split = st.radio("Choose split (km)", options=[1, 2, 5], index=0)
+    d_split = st.radio("Choose split (km)", options=[1, 2, 5], index=2)
     antal, rest = divmod(d_choice_m, 1000 * d_split)
     d_range = [d_split * x for x in range(1, antal + 1)]
 
