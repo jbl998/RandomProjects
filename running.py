@@ -3,7 +3,6 @@ import pandas as pd
 import numpy as np
 import datetime
 
-
 tab1, tab2 = st.tabs(["Race time to pace", "Pace to Race Time"])
 
 now = datetime.datetime.now()
